@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: [self-hosted, Linux, X64]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -28,7 +28,7 @@ jobs:
           path: target/*.war
 
   deploy:
-    runs-on: self-hosted
+    runs-on: [self-hosted, Linux, X64]
     needs: build
     steps:
       - name: Download WAR artifact
